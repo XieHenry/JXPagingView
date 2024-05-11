@@ -188,6 +188,10 @@
         //让外部统一访问scrollView
         _scrollView = _collectionView;
     }
+    
+    if ([UIView userInterfaceLayoutDirectionForSemanticContentAttribute:UIView.appearance.semanticContentAttribute] == UIUserInterfaceLayoutDirectionRightToLeft) {
+        _scrollView.semanticContentAttribute = UISemanticContentAttributeForceLeftToRight;
+    }
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
